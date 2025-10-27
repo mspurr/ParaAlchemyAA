@@ -43,6 +43,7 @@ The Para wallet acts as the EOA (Externally Owned Account) signer that controls 
 
 ## References
 
+- [Para Server Setup Guide](https://docs.getpara.com/v2/server/setup)
 - [Para Server SDK Account Abstraction Guide](https://docs.getpara.com/v2/server/guides/account-abstraction)
 - [Para Examples - Alchemy EIP-7702 with Bun](https://github.com/getpara/examples-hub/blob/2.0.0-alpha/server/with-bun/src/routes/signWithAlchemyEIP7702.ts)
 - [Test Gasless TX Example](https://github.com/Vinhhjk/test-gasless-tx)
