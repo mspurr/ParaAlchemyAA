@@ -12,7 +12,7 @@ import type { WithImplicitCoercion } from 'buffer';
 import { hashMessage, type SignableMessage, type WalletClient } from "viem";
 import { WalletClientSigner } from "@alchemy/aa-core";
 import { alchemy, monadTestnet } from '@account-kit/infra';
-import { createModularAccountV2Client } from '@account-kit/smart-contracts';
+import { createModularAccountV2Client, type ModularAccountV2Client } from '@account-kit/smart-contracts';
 
 function hexStringToBase64(hexString: WithImplicitCoercion<string>) {
   return Buffer.from(hexString, "hex").toString("base64");
@@ -58,7 +58,7 @@ async function transferTokenWithSmartAccount(
   targetAddress: `0x${string}`,
   tokenAddress: `0x${string}`,
   amount: bigint,
-  smartAccountClient: any
+  smartAccountClient: ModularAccountV2Client
 ): Promise<`0x${string}`> {
   const erc20Abi = [
     {
@@ -141,10 +141,14 @@ async function main() {
   const smartWalletAddress = alchemyClient.getAddress();
   console.log("smart account address", smartWalletAddress)
 
+  const receipientAddress = "0x7EE314Ba3dc6e4a34eeBF17c5034DecDa4Fb5D1e";
+  const tokenAddress = "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea";
+  const amount = 1000000n;
+
   const transferTokenReceipt = await transferTokenWithSmartAccount(
-    "0x7EE314Ba3dc6e4a34eeBF17c5034DecDa4Fb5D1e",
-    "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea",
-    1000000n,
+    receipientAddress,
+    tokenAddress,
+    amount,
     alchemyClient
   );
 
