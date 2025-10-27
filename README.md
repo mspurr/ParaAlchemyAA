@@ -18,6 +18,8 @@ This example shows how to:
 
 ## Setup
 
+> **⚠️ Warning:** This script currently crashes when run with Bun. Please use Node.js/npm instead.
+
 1. **Install dependencies:**
 ```bash
 npm install
