@@ -141,12 +141,12 @@ async function main() {
   const smartWalletAddress = alchemyClient.getAddress();
   console.log("smart account address", smartWalletAddress)
 
-  const receipientAddress = "0x7EE314Ba3dc6e4a34eeBF17c5034DecDa4Fb5D1e";
+  const recipientAddress = "0x7EE314Ba3dc6e4a34eeBF17c5034DecDa4Fb5D1e";
   const tokenAddress = "0xf817257fed379853cDe0fa4F97AB987181B1E5Ea";
   const amount = 1000000n;
 
   const transferTokenReceipt = await transferTokenWithSmartAccount(
-    receipientAddress,
+    recipientAddress,
     tokenAddress,
     amount,
     alchemyClient
